@@ -1,9 +1,10 @@
 from JsonDataLoadControl import JsonDataLoadControl
 from ReturnErrorCode import ReturnErrorCode
 from DebugTool import DebugTool
+import traceback
 
 ConfigSetting = {}
-ConfigPath = "/etc/oplink/dragon/"
+ConfigPath = "/etc/oplink/dragons/"
 SettingPath = ConfigPath + "default.conf"
 
 class Dragon :
@@ -17,4 +18,5 @@ class Dragon :
              self.RetrunCode = ReturnErrorCode()
          except :
              print "Server Init Error!"
+             print traceback.format_exc()
              exit()

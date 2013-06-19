@@ -13,7 +13,7 @@ from types import MethodType
 from time import time
 from Dragon import Dragon
 from ReturnErrorCode import ReturnErrorCode
-from bottle import route,run,Bottle
+from bottle import route,run,Bottle,request
 from gevent.pywsgi import WSGIServer
 from JsonDataLoadControl import JsonDataLoadControl
 import simplejson as json
@@ -45,6 +45,11 @@ try :
             print "Http Url : " + Url + " Is Setting...."
             @app.route(Url,method=MethodList[element]["HttpMethod"])
             def callback(Function,APIKey,Base64EncodeJsonData) :
+                if MethodList[Function]["HttpMethod"].upper() != request.method :
+                    print "Http Method Not Allowed"
+
+                    return json.JSONEncoder().encode(ReturnErrorCode().getReturnErrorCode("405"))
+
                 try :
 
                     return getattr(Factory,Function)(Function,APIKey,Base64EncodeJsonData)
@@ -59,6 +64,8 @@ try :
             print MethodList[element]["ReturnMethod"] + " Define Error!"
     try :
         print "Server Is Starting...."
+        print "Domain : " + Config[Config["Version"]]["Domain"]
+        print "Port : " + Config[Config["Version"]]["Port"]
         WSGIServer((Config[Config["Version"]]["Domain"],int(Config[Config["Version"]]["Port"])),app).serve_forever()
     except :
         print "Server Error!"

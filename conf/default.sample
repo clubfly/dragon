@@ -1,0 +1,31 @@
+{
+  "Version" : "local",
+  "local" : {
+             "DebugMode"       : "1",
+             "Domain"          : "",
+             "Port"            : "8081",
+             "MethodSetting"   : "/etc/oplink/dragons/MethodList.conf",
+             "DatabaseSetting" : "/etc/oplink/dragons/DatabaseList.conf"
+            },
+  "dev" : { 
+           "DebugMode"       : "1",
+           "Domain"          : "",
+           "Port"            : "",
+           "MethodSetting"   : "/etc/oplink/dragons/MethodList.conf",
+           "DatabaseSetting" : "/etc/oplink/dragons/DatabaseList.conf"
+          },
+  "test" : {
+            "DebugMode"       : "1",
+            "Domain"          : "",
+            "Port"            : "",
+            "MethodSetting"   : "/etc/oplink/dragons/MethodList.conf",
+            "DatabaseSetting" : "/etc/igs/sheep/DatabaseList.conf"
+           },
+  "release" : {
+               "DebugMode"       : "1",
+               "Domain"          : "",
+               "Port"            : "",
+               "MethodSetting"   : "/etc/oplink/dragons/MethodList.conf",
+               "DatabaseSetting" : "/etc/igs/sheep/DatabaseList.conf"
+              }
+}

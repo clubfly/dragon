@@ -1,0 +1,25 @@
+#!/usr/bin/python
+from os import path
+from shutil import copyfile
+import glob
+import sys
+
+try :
+    projectname = sys.argv[1]
+    filedot = ".conf"
+    BasicPath = "/etc/oplink/" + str(projectname) + "/"
+    TestFile = "default" + filedot
+    PATH = BasicPath + TestFile
+    print "project from " + str(BasicPath)
+
+    if path.exists(PATH) and path.isfile(PATH) :
+        print "config File check success!"
+    else :
+        print "config File check error! copy .smaple file..."
+        list = glob.glob(BasicPath + "*.sample")
+        for ls in list :
+            print "file : " + ls
+            FileName = ls.split("/")[4].split(".")[0]
+            copyfile(ls,BasicPath + FileName + filedot)
+except :
+    print "You Need argv Value!"

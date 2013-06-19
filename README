@@ -1,0 +1,39 @@
+Programe Require 
+1. pycurl
+2. mysqldb
+
+==================================================================
+
+A. Folder List
+
+basic folder :
+  all bound method function set here
+
+lib folder :
+  all thirdparty lib set here
+
+model folder :
+  all share class such as database connector, data model set here
+
+==================================================================
+
+B. Config Setting Rule
+
+1. open /etc/oplink/dragon ,you can see conf files.
+
+   DatabaseList.conf :
+     database servers are setting here ,
+     you can add new server in this file.
+
+   default.conf :
+     program basic confing are setting here,
+     you can add or change settings when developing.
+   
+   MethodList.conf :
+     http request settings.
+   
+   if you wanna add or chage config,
+   you must be set in correct format rule,
+   all rules are designed in /etc/igs/sheep/*.conf files.
+
+==================================================================

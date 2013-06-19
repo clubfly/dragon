@@ -34,6 +34,6 @@ B. Config Setting Rule
    
    if you wanna add or chage config,
    you must be set in correct format rule,
-   all rules are designed in /etc/igs/sheep/*.conf files.
+   all rules are designed in /etc/oplink/dragon/*.conf files.
 
 ==================================================================

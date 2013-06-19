@@ -4,7 +4,7 @@ from DebugTool import DebugTool
 import traceback
 
 ConfigSetting = {}
-ConfigPath = "/etc/oplink/dragons/"
+ConfigPath = "/etc/oplink/dragon/"
 SettingPath = ConfigPath + "default.conf"
 
 class Dragon :

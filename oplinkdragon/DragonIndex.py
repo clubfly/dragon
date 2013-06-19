@@ -19,7 +19,7 @@ from JsonDataLoadControl import JsonDataLoadControl
 import simplejson as json
 import traceback
 
-ConfigPath = "/etc/oplink/dragons/"
+ConfigPath = "/etc/oplink/dragon/"
 
 try :
     print "Config Loading..."
